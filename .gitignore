@@ -3,20 +3,25 @@
 .env.*
 !.env.example
 
+# Dependencies
+/vendor/
+node_modules/
+
 # Logs
 *.log
+logs/
 
 # OS files
 .DS_Store
 Thumbs.db
 
-# IDE
+# IDE / editor
 .vscode/
 .idea/
+*.swp
+*.swo
 
 # Temporary files
 *.tmp
 *.temp
-
-# Database credentials
-config/database.php
+temp/
