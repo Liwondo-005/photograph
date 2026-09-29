@@ -1,0 +1,88 @@
+:root {
+  --primary: #0d6efd;
+  --secondary: #6c757d;
+  --success: #198754;
+  --warning: #ffc107;
+  --danger: #dc3545;
+  --dark: #212529;
+  --light: #f8f9fa;
+  --shadow: 0 15px 35px rgba(15, 23, 42, 0.08);
+}
+
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--dark);
+  background: var(--light);
+}
+
+img { max-width: 100%; }
+a { text-decoration: none; }
+
+.navbar-transparent {
+  background: rgba(255,255,255,0.12);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+}
+.navbar-transparent .nav-link, .navbar-transparent .navbar-brand { color: #fff !important; }
+.navbar-transparent .btn-outline-light:hover { background: #fff; color: var(--dark); }
+
+.hero-section {
+  min-height: 100vh;
+  background: linear-gradient(135deg, rgba(13, 110, 253, 0.85), rgba(33, 37, 41, 0.9)), url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.hero-section .display-4 { font-size: clamp(2.2rem, 4.5vw, 4rem); line-height: 1.1; }
+.hero-section .lead { font-size: 1.1rem; color: rgba(255,255,255,0.9); }
+
+.section-title { font-size: 2rem; font-weight: 700; color: var(--dark); }
+.section-title span { color: var(--primary); }
+
+.card-hover {
+  transition: transform .25s ease, box-shadow .25s ease;
+  border: 0;
+  border-radius: 1.2rem;
+  box-shadow: var(--shadow);
+}
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.15);
+}
+
+.service-card img, .gallery-card img, .photographer-card img, .testimonial-card img {
+  object-fit: cover;
+  height: 220px;
+  width: 100%;
+}
+.gallery-card .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, transparent, rgba(0,0,0,0.6));
+  display: flex;
+  align-items: flex-end;
+  padding: 1rem;
+  color: #fff;
+}
+.gallery-card .badge { position: absolute; top: 1rem; left: 1rem; }
+.gallery-card .zoom-btn { position: absolute; top: 1rem; right: 1rem; }
+.gallery-card:hover img { transform: scale(1.05); }
+.gallery-card img { transition: transform .3s ease; }
+
+.filter-btn.active { background: var(--primary) !important; color: #fff; }
+
+.counter-box { border-left: 4px solid var(--primary); }
+
+.contact-card { border: 0; border-radius: 1rem; box-shadow: var(--shadow); }
+
+.footer { background: #0f172a; color: #e2e8f0; }
+.footer a { color: #cbd5e1; }
+
+.reveal { opacity: 0; transform: translateY(25px); transition: all .6s ease; }
+.reveal.visible { opacity: 1; transform: translateY(0); }
+
+@media (max-width: 768px) {
+  .hero-section { padding: 5rem 0; }
+  .section-title { font-size: 1.6rem; }
+}
